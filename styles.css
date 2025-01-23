@@ -37,16 +37,16 @@
 
 body {
   /* overflow: hidden; */
+  /* height: 100vh; */
   background-color: #f9fafb;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 
 
 .bg {
-    height: 100vh;
     grid-row: 1 / -1;
     grid-column: 1 / 2;
 }
@@ -63,7 +63,7 @@ body {
   align-items: center;
 
   font-family: 'norsebold', serif;
-  font-size: 3.1rem;
+  font-size: 3.3rem;
 
   grid-row: 1 / 2;
   grid-column: 1 / 2;
@@ -82,6 +82,20 @@ body {
     /* display: inline; */
 }
 
+p.credit {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+  justify-self: center;
+  align-self: end;
+  color: white;
+  margin-bottom: 1.7em;
+  font-size: 0.8rem;
+}
+
+p > a {
+  color: white;
+}
+
 .info {
   width: 70%;
   grid-column: 2 / -1;
@@ -89,15 +103,15 @@ body {
   align-self: end;
   padding-left: 2em;
   padding-bottom: 2em;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .info p {
   margin: 1em 0;
 }
 
-fieldset {
-  position: relative;
-}
+
 
 legend {
   position: absolute;
@@ -105,8 +119,8 @@ legend {
   left: 0;
 }
 
-h2 {
-  font-size: 1.8rem;
+form h3 {
+  font-size: 1.4rem;
   margin: 0.8rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -114,20 +128,70 @@ h2 {
 
 label, input {
   display: block;
+  box-sizing: border-box;
 }
 
-fieldset > div {
+form > div {
   width: 70%;
   display: flex;
   flex-wrap: wrap;
   row-gap: 1.6rem;
   justify-content: space-between;
+  margin-left: 0.8rem;
+  margin-bottom: 1.7rem;
 }
 
 input {
   width: 100%;
+  border: solid rgb(199, 199, 199) 1.7px;
+  border-radius: 5px
 }
 
-fieldset > div > div {
+input:invalid {
+  border: solid rgb(255, 113, 113) 1.7px;
+}
+
+input:focus {
+  outline: none;
+  border-radius: 5px;
+  border: solid #6a89e2 1.7px;
+  box-shadow: 2px 2px 4px 0px rgba(128, 128, 128, 0.422);
+}
+
+
+
+form > div > div {
   width: 46%;
 }
+
+form {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  box-shadow: 3px 3px 7px 2px rgba(140, 140, 140, 0.404);
+  padding-left: 2.2rem;
+}
+
+label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+}
+
+
+
+button {
+  background-color: #596D48;
+  font-weight: bold;
+  color: white;
+  padding: 0.8em 2.5em;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 1.2em;
+  box-shadow: 2px 2px 4px 1px rgba(128, 128, 128, 0.422);
+}
+
+.end {
+  margin: 2em;
+}
+
+
